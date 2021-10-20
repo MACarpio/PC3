@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Pc3practica.Models.Productos>
+@{
+    ViewData["Title"] = "Home Page";
+}
+  
+<div class="titulo"><h3>| Productos |</h3></div>
+
+<div class="contenedor">
+    @foreach (var item in Model) {
+    <div class="carta">
+        <div class="cont-img">
+            <img src="@item.imagen" class="img-carta" alt="..." style=" with: 250px;">
+        </div>
+        <div class="desc-carta">
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.nombre)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.nombre)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.precio)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.precio)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.categoria)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.categoria)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.telefono)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.telefono)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.lugar)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.lugar)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.nombrecomp)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.nombrecomp)</p>
+            <h5 class="pro-carta">@Html.DisplayNameFor(model => model.descripcion)</h5>
+            <p class="text-carta">@Html.DisplayFor(modelItem => item.descripcion)</p>
+        </div>
+    </div>
+    }
+</div>
+<div style="margin-top: 5%; text-align: center;">
+<p>
+    <a class="btn btn-primary" asp-action="Create" >Crear nuevo Producto</a>
+</p>
+</div>
